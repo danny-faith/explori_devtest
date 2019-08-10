@@ -1,4 +1,6 @@
 import React from 'react';
+import { ListGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 interface IProps {
 	surveyTitle: string;
@@ -7,10 +9,10 @@ interface IProps {
 
 const SurveyListItem: React.FC<IProps> = ({ surveyTitle, surveyLink }) => {
 	return (
-		<li>
+		<ListGroup.Item>
 			{surveyTitle}
-			{surveyLink}
-		</li>
+			<Link to={surveyLink}>{surveyLink}</Link>
+		</ListGroup.Item>
 	);
 };
 
