@@ -11,7 +11,7 @@ const SurveyListItem: React.FC<IProps> = ({ surveyTitle, surveyLink }) => {
 	return (
 		<ListGroup.Item>
 			{surveyTitle}
-			<Link to={surveyLink}>{surveyLink}</Link>
+			<Link to={surveyLink}> View report</Link>
 		</ListGroup.Item>
 	);
 };

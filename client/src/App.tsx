@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import Navigation from './components/Navigation';
 import YourSurveys from './pages/YourSurveys';
+import SurveyResponses from './pages/SurveyResponses';
 
 const App: React.FC = () => {
 	return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
 				<Row>
 					<Col>
 						<Route exact path="/your-surveys" component={YourSurveys} />
+						<Route exact path="/survey/:surveyId" component={SurveyResponses} />
 					</Col>
 				</Row>
 			</Container>
