@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Table } from 'react-bootstrap';
+import question from '../questions/46727569-7466-756C-5132-313736300000.json';
 
 interface IProps {
-	question: string;
+	// questionId_txt: string;
+}
+
+interface IGraph {
+	graphType: string;
+	fun?(text: string): string;
 }
 
 const options: Highcharts.Options = {
@@ -19,10 +25,92 @@ const options: Highcharts.Options = {
 	]
 };
 
-const Response: React.FC<IProps> = ({ question }) => {
+function Example() {
+	// Declare a new state variable, which we'll call "count"
+	const [count, setCount] = React.useState(0);
+
 	return (
-		<div className="p-3 bg-green-200">
-			<h2>{question}</h2>
+		<div>
+			<p>You clicked {count} times</p>
+			<button onClick={() => setCount(count + 1)}>Click me</button>
+		</div>
+	);
+}
+// const Response: React.FC<IProps> = ({ questionId_txt }) => {
+const Response: React.FC = () => {
+	// let graphType = 'a graph';
+	function fun() {
+		return 'hello';
+	}
+	const [questionTitle, setQuestionTitle] = React.useState('');
+	const [questionTypeCode, setQuestionTypeCode] = React.useState('');
+	const [graph, setGraphType] = React.useState<IGraph>({
+		graphType: '',
+		fun
+	});
+	const responseData = [
+		{
+			option: '1 - 2 hours',
+			ct: '14',
+			percent: '30'
+		},
+		{
+			option: '2 - 4 hours',
+			ct: '14',
+			percent: '30'
+		},
+		{
+			option: '4 - 8 hours',
+			ct: '14',
+			percent: '30'
+		},
+		{
+			option: '8 - 12 hours',
+			ct: '14',
+			percent: '30'
+		}
+	];
+	// useEffect(() => {
+	// 	fetch(`/api/questions/${questionId_txt}`)
+	// 		.then(response => response.json())
+	// 		.then(res => {
+	// 			setQuestionTitle(res.text);
+	// 			setQuestionTypeCode(res.questionTypeCode);
+	// 		})
+	// 		.catch(err => console.log(err));
+	// }, [questionId_txt]);
+	// const fetchData = async () => {
+	// 	const data = await fetch('/api/surveys/daniel');
+	// 	const dataJSON = await data.json();
+	// 	console.log(dataJSON);
+	// };
+	// fetchData();
+	// const fetchData = async () => { await fetch('https://pokeapi.co/api/v2/pokemon/ditto/');
+
+	// fetchData().then(res => console.log(res));
+	useEffect(() => {
+		// console.log('comp loaded', questionTypeCode);
+		if (questionTypeCode !== '') {
+			switch (questionTypeCode) {
+				case 'RD':
+					setGraphType({ graphType: 'RD graph' });
+					// graphType = 'RD graph';
+					break;
+				case 'TA':
+					setGraphType({ graphType: 'TA graph' });
+					break;
+				default:
+					break;
+			}
+		}
+		console.log('question: ', question);
+	}, [questionTypeCode]);
+	// console.log(graph.graphType);
+	return (
+		<div className="p-3 mt-3 bg-green-200">
+			<h5>{questionTitle}</h5>
+			{/* <p>{graph.graphType}</p> */}
+			{/* <Example /> */}
 			<Table className="mt-4" striped bordered hover>
 				<thead>
 					<tr>
@@ -32,19 +120,16 @@ const Response: React.FC<IProps> = ({ question }) => {
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Yes</td>
-						<td>22</td>
-						<td>33</td>
-					</tr>
-					<tr>
-						<td>No</td>
-						<td>33</td>
-						<td>22</td>
-					</tr>
+					{responseData.map(res => (
+						<tr>
+							<td>{res.option}</td>
+							<td>{res.ct}</td>
+							<td>{res.percent}</td>
+						</tr>
+					))}
 				</tbody>
 			</Table>
-			<HighchartsReact highcharts={Highcharts} options={options} />
+			{/* <HighchartsReact highcharts={Highcharts} options={options} /> */}
 		</div>
 	);
 };

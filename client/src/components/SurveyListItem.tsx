@@ -4,14 +4,22 @@ import { Link } from 'react-router-dom';
 
 interface IProps {
 	surveyTitle: string;
-	surveyLink: string;
+	surveyId_txt: string;
 }
 
-const SurveyListItem: React.FC<IProps> = ({ surveyTitle, surveyLink }) => {
+const SurveyListItem: React.FC<IProps> = ({ surveyTitle, surveyId_txt }) => {
 	return (
 		<ListGroup.Item>
 			{surveyTitle}
-			<Link to={surveyLink}> View report</Link>
+			<Link
+				to={{
+					pathname: `/surveys/${surveyId_txt}`,
+					state: { title: surveyTitle }
+				}}
+			>
+				{' '}
+				View report {surveyId_txt}
+			</Link>
 		</ListGroup.Item>
 	);
 };

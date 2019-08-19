@@ -1,30 +1,35 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ListGroup } from 'react-bootstrap';
 import SurveyListItem from '../components/SurveyListItem';
 
 interface IProps {}
 
-const YourSurveys: React.FC<IProps> = () => {
+interface ISurvey {
+	surveyId_txt: string;
+	name: string;
+}
+
+const YourSurveys: React.FC = () => {
+	const [surveys, setSurveys] = useState<ISurvey[]>([]);
+
 	useEffect(() => {
-		fetch('/question')
+		fetch('/api/surveys/all')
 			.then(response => response.json())
-			.then(res => console.log(res))
+			.then(res => {
+				// console.log(res);
+				setSurveys(res);
+			})
 			.catch(err => console.log(err));
 	}, []);
 	return (
-		<ListGroup>
-			<SurveyListItem
-				surveyTitle="Feb 2017"
-				surveyLink="/survey/wrglrnlrvnusfvk"
-			/>
-			<SurveyListItem
-				surveyTitle="Feb 2017"
-				surveyLink="/survey/wrglrnlrvbdbgdb"
-			/>
-			<SurveyListItem
-				surveyTitle="Feb 2017"
-				surveyLink="/survey/wrglrnlvwy5vyw4"
-			/>
+		<ListGroup className="my-4">
+			{surveys.map((survey: ISurvey, i: number) => (
+				<SurveyListItem
+					surveyTitle={survey.name}
+					surveyId_txt={survey.surveyId_txt}
+					key={i}
+				/>
+			))}
 		</ListGroup>
 	);
 };

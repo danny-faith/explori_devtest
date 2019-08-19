@@ -12,8 +12,12 @@ const App: React.FC = () => {
 			<Container>
 				<Row>
 					<Col>
-						<Route exact path="/your-surveys" component={YourSurveys} />
-						<Route exact path="/survey/:surveyId" component={SurveyResponses} />
+						<Route exact path="/surveys" component={YourSurveys} />
+						<Route
+							exact
+							path="/surveys/:surveyId_txt"
+							component={SurveyResponses}
+						/>
 					</Col>
 				</Row>
 			</Container>

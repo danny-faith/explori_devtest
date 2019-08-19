@@ -8,7 +8,7 @@ const Navigation: React.FC = () => {
 				<Nav.Link href="/">Fruitful</Nav.Link>
 			</Nav.Item>
 			<Nav.Item>
-				<Nav.Link href="/your-surveys" eventKey="link-1">
+				<Nav.Link href="/surveys" eventKey="link-1">
 					Your surveys
 				</Nav.Link>
 			</Nav.Item>
