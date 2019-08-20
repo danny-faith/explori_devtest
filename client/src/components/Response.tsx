@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Table } from 'react-bootstrap';
-import question from '../questions/46727569-7466-756C-5132-313736300000.json';
+import { IResponse } from '../interfaces/interfaces';
 
 interface IResponseProps {
 	responses: object[];
@@ -15,45 +15,33 @@ interface IGraph {
 	fun?(text: string): string;
 }
 
-const options: Highcharts.Options = {
-	title: {
-		text: 'My chart'
-	},
-	series: [
-		{
-			type: 'line',
-			data: [1, 2, 3]
-		}
-	]
-};
-
 const Response: React.FC<IResponseProps> = props => {
 	function fun() {
 		return 'hello';
 	}
+	console.log(props);
 
-	const responseData = [
-		{
-			optionSetTxt: '1 - 2 hours',
-			ct: '14',
-			percent: '30'
+	const options: Highcharts.Options = {
+		title: {
+			text: props.questionTitle
 		},
-		{
-			optionSetTxt: '2 - 4 hours',
-			ct: '14',
-			percent: '30'
+		chart: {
+			type: 'bar'
 		},
-		{
-			optionSetTxt: '4 - 8 hours',
-			ct: '14',
-			percent: '30'
+		xAxis: {
+			categories: props.responses.map((response: any) => response.optionSetTxt)
 		},
-		{
-			optionSetTxt: '8 - 12 hours',
-			ct: '14',
-			percent: '30'
-		}
-	];
+		series: [
+			{
+				type: 'bar',
+				data: [105, 0]
+			},
+			{
+				type: 'bar',
+				data: [0, 6]
+			}
+		]
+	};
 
 	// useEffect(() => {
 	// 	// console.log('comp loaded', questionTypeCode);
@@ -105,7 +93,7 @@ const Response: React.FC<IResponseProps> = props => {
 					))}
 				</tbody>
 			</Table>
-			{/* <HighchartsReact highcharts={Highcharts} options={options} /> */}
+			<HighchartsReact highcharts={Highcharts} options={options} />
 		</div>
 	);
 };

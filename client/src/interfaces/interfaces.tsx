@@ -39,9 +39,15 @@ export interface IPageState {
 }
 
 export interface IResponses {
-	responses: object[];
+	responses: Array<IResponse>;
 	questionTitle: string;
 	questionTypeCode: string;
+}
+
+export interface IResponse {
+	'COUNT(id)': number;
+	optionSetTxt: string;
+	set1_txt: string;
 }
 
 export interface ISurveyResponseProps {
