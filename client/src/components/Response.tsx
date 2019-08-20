@@ -52,22 +52,22 @@ const Response: React.FC<IResponseProps> = props => {
 	// });
 	const responseData = [
 		{
-			option: '1 - 2 hours',
+			optionSetTxt: '1 - 2 hours',
 			ct: '14',
 			percent: '30'
 		},
 		{
-			option: '2 - 4 hours',
+			optionSetTxt: '2 - 4 hours',
 			ct: '14',
 			percent: '30'
 		},
 		{
-			option: '4 - 8 hours',
+			optionSetTxt: '4 - 8 hours',
 			ct: '14',
 			percent: '30'
 		},
 		{
-			option: '8 - 12 hours',
+			optionSetTxt: '8 - 12 hours',
 			ct: '14',
 			percent: '30'
 		}
@@ -112,6 +112,13 @@ const Response: React.FC<IResponseProps> = props => {
 	// 	// console.log('question: ', question);
 	// }, [questionTypeCode]);
 	// console.log(graph.graphType);
+	function toFixed(x: number): string {
+		return x.toFixed(2);
+	}
+	// calculate total number of responses for use with caluclating percentages
+	const totalResponses = props.responses
+		.map((response: any) => response['COUNT(id)'])
+		.reduce((a, b) => a + b, 0);
 	return (
 		<div className="p-3 mt-3 bg-green-200">
 			<h5>{props.questionTitle}</h5>
@@ -126,11 +133,11 @@ const Response: React.FC<IResponseProps> = props => {
 					</tr>
 				</thead>
 				<tbody>
-					{responseData.map((res: any, i: number) => (
+					{props.responses.map((res: any, i: number) => (
 						<tr key={i}>
-							<td>{res.option}</td>
-							<td>{res.ct}</td>
-							<td>{res.percent}</td>
+							<td>{res.optionSetTxt}</td>
+							<td>{res['COUNT(id)']}</td>
+							<td>{toFixed((res['COUNT(id)'] / totalResponses) * 100)}</td>
 						</tr>
 					))}
 				</tbody>

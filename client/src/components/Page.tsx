@@ -27,6 +27,7 @@ const Page: React.FC<IPageProps> = props => {
 			fetch(`/api/questions/answers/${question.questionId}`)
 				.then(res => res.json())
 				.then(res => {
+					// console.log(res);
 					newResponses.push(res);
 				})
 				.catch(err => console.log(err))
@@ -40,7 +41,7 @@ const Page: React.FC<IPageProps> = props => {
 				<Response
 					questionTitle={response.title}
 					questionTypeCode={response.questionTypeCode}
-					responses={response.responses}
+					responses={response.results}
 					key={i}
 				/>
 			))}
