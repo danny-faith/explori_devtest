@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router();
+const loadJsonFile = require('load-json-file');
 const connection = require('../dbConnection');
 
 //  @route GET api/surveys/all
@@ -10,6 +11,23 @@ router.get('/all', (req, res) => {
         if (error) throw error;
         res.json(results);
     });
+});
+
+//  @route GET api/surveys/:surveyId_txt
+//  @description Get survey JSON file
+//  @access Public
+router.get('/:surveyId_txt', (req, res) => {
+    const { surveyId_txt } = req.params;
+    // console.log(surveyId_txt);
+    (async () => {
+        const fileContents = await loadJsonFile(`./survey/${surveyId_txt}.json`);
+        res.json(fileContents);
+        //=> {foo: true}
+    })();
+    // connection.query('SELECT surveyId_txt, name FROM survey', function (error, results) {
+    //     if (error) throw error;
+    //     res.json(results);
+    // });
 });
 
 // surveyData > surveyId_txt
@@ -71,6 +89,8 @@ router.get('/questionid/:surveydataid_txt', (req, res) => {
         res.json(results);
     });
 });
+
+
 
 module.exports = router;
 

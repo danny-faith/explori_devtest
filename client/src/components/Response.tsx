@@ -4,8 +4,10 @@ import HighchartsReact from 'highcharts-react-official';
 import { Table } from 'react-bootstrap';
 import question from '../questions/46727569-7466-756C-5132-313736300000.json';
 
-interface IProps {
-	// questionId_txt: string;
+interface IResponseProps {
+	responses: object[];
+	questionTitle: string;
+	questionTypeCode: string;
 }
 
 interface IGraph {
@@ -37,17 +39,17 @@ function Example() {
 	);
 }
 // const Response: React.FC<IProps> = ({ questionId_txt }) => {
-const Response: React.FC = () => {
+const Response: React.FC<IResponseProps> = props => {
 	// let graphType = 'a graph';
 	function fun() {
 		return 'hello';
 	}
 	const [questionTitle, setQuestionTitle] = React.useState('');
 	const [questionTypeCode, setQuestionTypeCode] = React.useState('');
-	const [graph, setGraphType] = React.useState<IGraph>({
-		graphType: '',
-		fun
-	});
+	// const [graph, setGraphType] = React.useState<IGraph>({
+	// 	graphType: '',
+	// 	fun
+	// });
 	const responseData = [
 		{
 			option: '1 - 2 hours',
@@ -88,27 +90,31 @@ const Response: React.FC = () => {
 	// const fetchData = async () => { await fetch('https://pokeapi.co/api/v2/pokemon/ditto/');
 
 	// fetchData().then(res => console.log(res));
-	useEffect(() => {
-		// console.log('comp loaded', questionTypeCode);
-		if (questionTypeCode !== '') {
-			switch (questionTypeCode) {
-				case 'RD':
-					setGraphType({ graphType: 'RD graph' });
-					// graphType = 'RD graph';
-					break;
-				case 'TA':
-					setGraphType({ graphType: 'TA graph' });
-					break;
-				default:
-					break;
-			}
-		}
-		console.log('question: ', question);
-	}, [questionTypeCode]);
+	// 4578706C-6F72-6951-3130-313500000000.json
+	// set1_txt / surveydataopt
+	// 93ba8e14-4b05-11e9-af77-0a3056fd536a
+
+	// useEffect(() => {
+	// 	// console.log('comp loaded', questionTypeCode);
+	// 	if (questionTypeCode !== '') {
+	// 		switch (questionTypeCode) {
+	// 			case 'RD':
+	// 				setGraphType({ graphType: 'RD graph' });
+	// 				// graphType = 'RD graph';
+	// 				break;
+	// 			case 'TA':
+	// 				setGraphType({ graphType: 'TA graph' });
+	// 				break;
+	// 			default:
+	// 				break;
+	// 		}
+	// 	}
+	// 	// console.log('question: ', question);
+	// }, [questionTypeCode]);
 	// console.log(graph.graphType);
 	return (
 		<div className="p-3 mt-3 bg-green-200">
-			<h5>{questionTitle}</h5>
+			<h5>{props.questionTitle}</h5>
 			{/* <p>{graph.graphType}</p> */}
 			{/* <Example /> */}
 			<Table className="mt-4" striped bordered hover>
@@ -120,8 +126,8 @@ const Response: React.FC = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{responseData.map(res => (
-						<tr>
+					{responseData.map((res: any, i: number) => (
+						<tr key={i}>
 							<td>{res.option}</td>
 							<td>{res.ct}</td>
 							<td>{res.percent}</td>

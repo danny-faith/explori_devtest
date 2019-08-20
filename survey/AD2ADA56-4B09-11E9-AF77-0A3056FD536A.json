@@ -1,0 +1,658 @@
+{
+  "id": "ad2ada56-4b09-11e9-af77-0a3056fd536a",
+  "pages": [
+    {
+      "id": "ae6af02f-4b09-11e9-af77-0a3056fd536a",
+      "title": "Screening Page",
+      "legacyId": 41506,
+      "pageType": "ST",
+      "priority": 1,
+      "questions": [
+        {
+          "id": "b4b37831-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 148050,
+          "priority": 1,
+          "questionId": "4578706c-6f72-6951-3131-323100000000",
+          "isMandatory": true,
+          "questionLevel": "Explori",
+          "hasPrepopulatedData": false
+        }
+      ],
+      "isRandomized": false
+    },
+    {
+      "id": "ae6afa9b-4b09-11e9-af77-0a3056fd536a",
+      "title": "Profiling 1",
+      "legacyId": 41509,
+      "pageType": "ST",
+      "priority": 2,
+      "questions": [
+        {
+          "id": "b4b38505-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54547,
+          "priority": 1,
+          "questionId": "4578706c-6f72-6951-3938-330000000000",
+          "isMandatory": true,
+          "questionLevel": "Explori",
+          "hasPrepopulatedData": false
+        },
+        {
+          "id": "b4b3871d-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54561,
+          "priority": 2,
+          "questionId": "46727569-7466-756c-5132-313739300000",
+          "isMandatory": true,
+          "questionLevel": "Product",
+          "hasPrepopulatedData": false
+        }
+      ],
+      "isRandomized": false
+    },
+    {
+      "id": "ae6af722-4b09-11e9-af77-0a3056fd536a",
+      "title": "Profiling 2",
+      "legacyId": 41508,
+      "pageType": "ST",
+      "priority": 3,
+      "questions": [
+        {
+          "id": "b4b37ea6-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54543,
+          "priority": 1,
+          "questionId": "46727569-7466-756c-5132-313736300000",
+          "isMandatory": true,
+          "questionLevel": "Product",
+          "hasPrepopulatedData": false
+        },
+        {
+          "id": "b4b380be-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54544,
+          "priority": 2,
+          "questionId": "46727569-7466-756c-5132-313736340000",
+          "isMandatory": true,
+          "questionLevel": "Product",
+          "hasPrepopulatedData": false
+        }
+      ],
+      "isRandomized": false
+    },
+    {
+      "id": "ae6af3a1-4b09-11e9-af77-0a3056fd536a",
+      "title": "Drivers + Dwell time",
+      "legacyId": 41507,
+      "pageType": "ST",
+      "priority": 4,
+      "questions": [
+        {
+          "id": "b4b37a71-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54541,
+          "parentId": "b4b380be-4b09-11e9-af77-0a3056fd536a",
+          "priority": 1,
+          "questionId": "46727569-7466-756c-5132-323032340000",
+          "isMandatory": true,
+          "questionLevel": "Product",
+          "hasPrepopulatedData": false
+        },
+        {
+          "id": "b4b37c8a-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54542,
+          "priority": 3,
+          "questionId": "4578706c-6f72-6951-3130-313500000000",
+          "isMandatory": true,
+          "questionLevel": "Explori",
+          "hasPrepopulatedData": false
+        }
+      ],
+      "isRandomized": false
+    },
+    {
+      "id": "ae6afdff-4b09-11e9-af77-0a3056fd536a",
+      "title": "Purchasing",
+      "legacyId": 41510,
+      "pageType": "ST",
+      "priority": 5,
+      "questions": [
+        {
+          "id": "b4b39085-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54548,
+          "priority": 1,
+          "questionId": "46727569-7466-756c-5132-313736310000",
+          "isMandatory": false,
+          "questionLevel": "Product",
+          "hasPrepopulatedData": false
+        },
+        {
+          "id": "b4b3929b-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54549,
+          "priority": 2,
+          "questionId": "46727569-7466-756c-5132-313736320000",
+          "isMandatory": true,
+          "questionLevel": "Product",
+          "hasPrepopulatedData": false
+        }
+      ],
+      "isRandomized": false
+    },
+    {
+      "id": "ae6b0161-4b09-11e9-af77-0a3056fd536a",
+      "title": "Rate components + Satisfaction",
+      "legacyId": 41511,
+      "pageType": "ST",
+      "priority": 6,
+      "questions": [
+        {
+          "id": "b4b394b1-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54550,
+          "priority": 1,
+          "questionId": "46727569-7466-756c-5136-383730310000",
+          "isMandatory": false,
+          "questionLevel": "Product",
+          "hasPrepopulatedData": false
+        },
+        {
+          "id": "b4b396c5-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54551,
+          "priority": 2,
+          "questionId": "4578706c-6f72-6951-3133-303200000000",
+          "isMandatory": true,
+          "questionLevel": "Explori",
+          "hasPrepopulatedData": false
+        },
+        {
+          "id": "b4b39932-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 82068,
+          "priority": 3,
+          "questionId": "4578706c-6f72-6951-3132-393100000000",
+          "isMandatory": true,
+          "questionLevel": "Explori",
+          "hasPrepopulatedData": false
+        }
+      ],
+      "isRandomized": false
+    },
+    {
+      "id": "ae6b0828-4b09-11e9-af77-0a3056fd536a",
+      "title": "Net promoter",
+      "legacyId": 41513,
+      "pageType": "ST",
+      "priority": 7,
+      "questions": [
+        {
+          "id": "b4b3a189-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54555,
+          "priority": 1,
+          "questionId": "4578706c-6f72-6951-3132-333000000000",
+          "isMandatory": true,
+          "questionLevel": "Explori",
+          "hasPrepopulatedData": false
+        },
+        {
+          "id": "b4b3a39a-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54556,
+          "priority": 2,
+          "questionId": "4578706c-6f72-6951-3130-353800000000",
+          "isMandatory": false,
+          "questionLevel": "Explori",
+          "hasPrepopulatedData": false
+        },
+        {
+          "id": "b4b39f76-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54554,
+          "priority": 3,
+          "questionId": "4578706c-6f72-6951-3130-363300000000",
+          "isMandatory": true,
+          "questionLevel": "Explori",
+          "hasPrepopulatedData": false
+        }
+      ],
+      "isRandomized": false
+    },
+    {
+      "id": "ae6b04c7-4b09-11e9-af77-0a3056fd536a",
+      "title": "Returning + Improving",
+      "legacyId": 41512,
+      "pageType": "ST",
+      "priority": 8,
+      "questions": [
+        {
+          "id": "b4b39d61-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54553,
+          "priority": 1,
+          "questionId": "46727569-7466-756c-5132-313736330000",
+          "isMandatory": false,
+          "questionLevel": "Product",
+          "hasPrepopulatedData": true
+        },
+        {
+          "id": "b4b39b4f-4b09-11e9-af77-0a3056fd536a",
+          "isLocked": false,
+          "legacyId": 54552,
+          "priority": 2,
+          "questionId": "4578706c-6f72-6951-3130-363500000000",
+          "isMandatory": false,
+          "questionLevel": "Explori",
+          "hasPrepopulatedData": false
+        }
+      ],
+      "isRandomized": false
+    },
+    {
+      "id": "ae6b0b99-4b09-11e9-af77-0a3056fd536a",
+      "title": "Completion Exit Page",
+      "content": {
+        "ar": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "ar"
+        },
+        "cy": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "cy"
+        },
+        "ja": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "ja"
+        },
+        "th": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "th"
+        },
+        "uk": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit. \n<br> \n<br> \n<span style=\"font-family: arial; font-size: 14px;\">If you are interested in attending one of our events in future, please&nbsp;</span> \n<a href=\"https://www.wrigleys.co.uk/\" style=\"font-family: arial; font-size: 14px;\">click here</a> \n<span style=\"font-family: arial; font-size: 14px;\">&nbsp;to visit our booking site.</span>",
+          "locale": "uk"
+        },
+        "az_AZ": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "az_AZ"
+        },
+        "cs_CZ": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "cs_CZ"
+        },
+        "da_DK": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "da_DK"
+        },
+        "de_DE": {
+          "text": "",
+          "locale": "de_DE"
+        },
+        "en_GB": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit. \n<br> \n<br> \n<span style=\"font-family: arial; font-size: 14px;\">If you are interested in attending one of our events in future, please&nbsp;</span> \n<a href=\"https://www.wrigleys.co.uk/\" style=\"font-family: arial; font-size: 14px;\">click here</a> \n<span style=\"font-family: arial; font-size: 14px;\">&nbsp;to visit our booking site.</span>",
+          "locale": "en_GB"
+        },
+        "en_US": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "en_US"
+        },
+        "es_ES": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "es_ES"
+        },
+        "fi_FI": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "fi_FI"
+        },
+        "fi_GB": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit. \n<br> \n<br> \n<span style=\"font-family: arial; font-size: 14px;\">If you are interested in attending one of our events in future, please&nbsp;</span> \n<a href=\"https://www.wrigleys.co.uk/\" style=\"font-family: arial; font-size: 14px;\">click here</a> \n<span style=\"font-family: arial; font-size: 14px;\">&nbsp;to visit our booking site.</span>",
+          "locale": "fi_GB"
+        },
+        "fr_FR": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "fr_FR"
+        },
+        "hu_HU": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit. \n<br> \n<br> \n<span style=\"font-family: arial; font-size: 14px;\">If you are interested in attending one of our events in future, please&nbsp;</span> \n<a href=\"https://www.wrigleys.co.uk/\" style=\"font-family: arial; font-size: 14px;\">click here</a> \n<span style=\"font-family: arial; font-size: 14px;\">&nbsp;to visit our booking site.</span>",
+          "locale": "hu_HU"
+        },
+        "id_ID": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit. \n<br> \n<br> \n<span style=\"font-family: arial; font-size: 14px;\">If you are interested in attending one of our events in future, please&nbsp;</span> \n<a href=\"https://www.wrigleys.co.uk/\" style=\"font-family: arial; font-size: 14px;\">click here</a> \n<span style=\"font-family: arial; font-size: 14px;\">&nbsp;to visit our booking site.</span>",
+          "locale": "id_ID"
+        },
+        "is_IS": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "is_IS"
+        },
+        "it_IT": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "it_IT"
+        },
+        "ko_KR": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "ko_KR"
+        },
+        "nl_NL": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "nl_NL"
+        },
+        "no_NO": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "no_NO"
+        },
+        "pl_PL": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "pl_PL"
+        },
+        "pt_BR": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "pt_BR"
+        },
+        "pt_PT": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit. \n<br> \n<br> \n<span style=\"font-family: arial; font-size: 14px;\">If you are interested in attending one of our events in future, please&nbsp;</span> \n<a href=\"https://www.wrigleys.co.uk/\" style=\"font-family: arial; font-size: 14px;\">click here</a> \n<span style=\"font-family: arial; font-size: 14px;\">&nbsp;to visit our booking site.</span>",
+          "locale": "pt_PT"
+        },
+        "ru_RU": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "ru_RU"
+        },
+        "sv_SE": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "sv_SE"
+        },
+        "tr_TR": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "tr_TR"
+        },
+        "zh_CN": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "zh_CN"
+        },
+        "zh_TW": {
+          "text": "Thank you for taking part, we appreciate your views. Please click \n<a href=\"https://www.google.co.uk/#q=pineapples\">here</a> to exit.",
+          "locale": "zh_TW"
+        }
+      },
+      "legacyId": 41514,
+      "pageType": "CO",
+      "priority": 9,
+      "isRandomized": false
+    },
+    {
+      "id": "ae6b0f07-4b09-11e9-af77-0a3056fd536a",
+      "title": "Screening Exit Page",
+      "content": {
+        "ar": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "ar"
+        },
+        "cy": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "cy"
+        },
+        "ja": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "ja"
+        },
+        "th": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "th"
+        },
+        "uk": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "uk"
+        },
+        "az_AZ": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "az_AZ"
+        },
+        "cs_CZ": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "cs_CZ"
+        },
+        "da_DK": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "da_DK"
+        },
+        "de_DE": {
+          "text": "",
+          "locale": "de_DE"
+        },
+        "en_GB": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "en_GB"
+        },
+        "en_US": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "en_US"
+        },
+        "es_ES": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "es_ES"
+        },
+        "fi_FI": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "fi_FI"
+        },
+        "fi_GB": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "fi_GB"
+        },
+        "fr_FR": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "fr_FR"
+        },
+        "hu_HU": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "hu_HU"
+        },
+        "id_ID": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "id_ID"
+        },
+        "is_IS": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "is_IS"
+        },
+        "it_IT": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "it_IT"
+        },
+        "ko_KR": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "ko_KR"
+        },
+        "nl_NL": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "nl_NL"
+        },
+        "no_NO": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "no_NO"
+        },
+        "pl_PL": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "pl_PL"
+        },
+        "pt_BR": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "pt_BR"
+        },
+        "pt_PT": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "pt_PT"
+        },
+        "ru_RU": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "ru_RU"
+        },
+        "sv_SE": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "sv_SE"
+        },
+        "tr_TR": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "tr_TR"
+        },
+        "zh_CN": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "zh_CN"
+        },
+        "zh_TW": {
+          "text": "We're sorry, we are only looking to speak to visitors to this year's event.",
+          "locale": "zh_TW"
+        }
+      },
+      "legacyId": 41515,
+      "pageType": "EX",
+      "priority": 10,
+      "isRandomized": false
+    }
+  ],
+  "content": {
+    "title": {
+      "de_DE": {
+        "text": "Visitor Survey 2017",
+        "legacyId": 16459
+      },
+      "en_GB": {
+        "text": "Visitor Survey 2019",
+        "legacyId": 5402
+      },
+      "fi_GB": {
+        "text": "Visitor Survey 2019"
+      },
+      "fr_FR": {
+        "text": "Visitor Survey 2017",
+        "legacyId": 19091
+      }
+    },
+    "welcomeContent": {
+      "en_GB": {
+        "text": ""
+      },
+      "fi_GB": {
+        "text": ""
+      }
+    }
+  },
+  "legacyId": 4357,
+  "metadata": {
+    "isTest": false,
+    "status": "Created",
+    "locales": [
+      "fi_GB"
+    ],
+    "branches": [],
+    "clientId": 73,
+    "taxonomy": {
+      "surveyType": "PE",
+      "respondentType": "VI"
+    },
+    "closeDate": "2019-11-15T10:18:00.000Z",
+    "isTemplate": false,
+    "productInfo": {
+      "productId": 339,
+      "industrySpecificInfo": {
+        "endDate": "2019-01-26T00:00:00+0000",
+        "venueId": 20,
+        "industry": "EV",
+        "startDate": "2019-01-25T00:00:00+0000",
+        "numVisitors": 500,
+        "productName": "The Pineapple Trade Show ",
+        "productType": "TR"
+      }
+    },
+    "creationInfo": {
+      "createdBy": 0,
+      "createdTime": "2019-04-11T14:18:55+0000"
+    },
+    "prePopulated": true,
+    "cacheLocation": "default",
+    "defaultLocale": "en_GB",
+    "displaySettings": {
+      "styling": "",
+      "bannerUrl": "38f094f1-b0d8-4859-91d9-b390bc70f15b.jpeg",
+      "showBackButton": true,
+      "showProgressBar": true,
+      "showPreviewMessage": true,
+      "disableMobileDisplayMode": false
+    },
+    "adminConsoleEnabled": false,
+    "defaultYrOnYrSurveyId": "accd73b0-4b09-11e9-af77-0a3056fd536a",
+    "excludeFromBenchmarks": false
+  },
+  "publicId": "ad2ada56-4b09-11e9-af77-0a3056fd536a",
+  "skipLogic": [
+    {
+      "id": "d55cc81f-f129-4cb3-bdc6-598b4f6d3131",
+      "action": {
+        "id": "c0400663-4b09-11e9-af77-0a3056fd536a",
+        "kind": "ShowQuestion",
+        "legacyId": 10451,
+        "pageQuestionId": "b4b39d61-4b09-11e9-af77-0a3056fd536a"
+      },
+      "legacyId": 25116,
+      "triggerGroups": [
+        {
+          "id": "a5089101-88c0-4c8c-9cda-627c1d90ebc7",
+          "children": [
+            {
+              "id": "83dbacd3-40b0-4fed-8b57-e16129c5d631",
+              "triggers": [
+                {
+                  "id": "c71f1477-4b09-11e9-af77-0a3056fd536a",
+                  "legacyId": 21321,
+                  "condition": {
+                    "kind": "QuestionOptionExistsInSurveyResponse",
+                    "set1": "93bd5ec5-4b05-11e9-af77-0a3056fd536a",
+                    "pageQuestionId": "b4b39f76-4b09-11e9-af77-0a3056fd536a",
+                    "equalityOperator": "Eq"
+                  }
+                },
+                {
+                  "id": "c71f1694-4b09-11e9-af77-0a3056fd536a",
+                  "legacyId": 21322,
+                  "condition": {
+                    "kind": "QuestionOptionExistsInSurveyResponse",
+                    "set1": "93bd6180-4b05-11e9-af77-0a3056fd536a",
+                    "pageQuestionId": "b4b39f76-4b09-11e9-af77-0a3056fd536a",
+                    "equalityOperator": "Eq"
+                  },
+                  "interTriggerLogicalOperator": "AND"
+                }
+              ],
+              "interGroupLogicalOperator": "OR"
+            }
+          ],
+          "interGroupLogicalOperator": "OR"
+        }
+      ]
+    },
+    {
+      "id": "c4bd26fe-4b09-11e9-af77-0a3056fd536a",
+      "action": {
+        "id": "c040086f-4b09-11e9-af77-0a3056fd536a",
+        "kind": "SkipToPage",
+        "pageId": "ae6b0f07-4b09-11e9-af77-0a3056fd536a",
+        "legacyId": 52845
+      },
+      "trigger": {
+        "id": "c8ab2392-4b09-11e9-af77-0a3056fd536a",
+        "legacyId": 88981,
+        "condition": {
+          "kind": "QuestionOptionExistsInSurveyResponse",
+          "set1": "93c11561-4b05-11e9-af77-0a3056fd536a",
+          "pageQuestionId": "b4b37831-4b09-11e9-af77-0a3056fd536a",
+          "equalityOperator": "Eq"
+        }
+      },
+      "legacyId": 110825,
+      "triggerGroups": []
+    }
+  ]
+}

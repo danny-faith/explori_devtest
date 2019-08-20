@@ -1,52 +1,34 @@
 import React, { useEffect } from 'react';
-import Response from '../components/Response';
+import Page from '../components/Page';
+import {
+	ISurveyResponseProps,
+	IPage,
+	IPageState
+} from '../interfaces/interfaces';
 
-interface IProps {
-	match: {
-		params: {
-			surveyId_txt: string;
-		};
-	};
-	location: {
-		state: {
-			title: string;
-		};
-	};
-}
-
-interface IResponseList {
-	questionIds: IQuestionId;
-}
-
-interface IQuestionId {
-	questionid_txt: string;
-}
-
-const SurveyResponses: React.FC<IProps> = props => {
+const SurveyResponses: React.FC<ISurveyResponseProps> = props => {
 	const { title: surveyTitle } = props.location.state;
 	const { surveyId_txt } = props.match.params;
-	const [questionIds, updateQuestionIds] = React.useState([]);
-	// console.log(surveyId_txt);
+	const [pages, updatePages] = React.useState<IPageState | any>([]);
+
 	useEffect(() => {
-		console.log(surveyId_txt);
-		fetch(`/api/surveys/surveydataid/${surveyId_txt}`)
+		fetch(`/api/surveys/${surveyId_txt}`)
 			.then(response => response.json())
 			.then(res => {
-				// updateQuestionIds(res);
-				// fetch(`/api/survey/questionid/${}`)
-				console.log('res: ', res);
+				// console.log(res.pages);
+				updatePages(res.pages);
 			})
 			.catch(err => console.log(err));
 	}, [surveyId_txt]);
-	// console.log('Get survey responses');
+
 	return (
 		<div>
 			<h1>{surveyTitle}</h1>
-			<p>Responses {questionIds.length}</p>
-			{/* {questionIds.map((questionId: IQuestionId, i: number) => (
-				<Response key={i} questionId_txt={questionId.questionid_txt} />
-			))} */}
-			<Response />
+			<p>Responses {pages.length}</p>
+			{/* Im passing down question IDs, so maybe page.questionIds */}
+			{pages.map((page: IPage, i: number) => (
+				<Page key={i} title={page.title} questions={page.questions} />
+			))}
 		</div>
 	);
 };
