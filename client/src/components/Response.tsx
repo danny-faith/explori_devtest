@@ -27,29 +27,11 @@ const options: Highcharts.Options = {
 	]
 };
 
-function Example() {
-	// Declare a new state variable, which we'll call "count"
-	const [count, setCount] = React.useState(0);
-
-	return (
-		<div>
-			<p>You clicked {count} times</p>
-			<button onClick={() => setCount(count + 1)}>Click me</button>
-		</div>
-	);
-}
-// const Response: React.FC<IProps> = ({ questionId_txt }) => {
 const Response: React.FC<IResponseProps> = props => {
-	// let graphType = 'a graph';
 	function fun() {
 		return 'hello';
 	}
-	const [questionTitle, setQuestionTitle] = React.useState('');
-	const [questionTypeCode, setQuestionTypeCode] = React.useState('');
-	// const [graph, setGraphType] = React.useState<IGraph>({
-	// 	graphType: '',
-	// 	fun
-	// });
+
 	const responseData = [
 		{
 			optionSetTxt: '1 - 2 hours',
@@ -72,27 +54,6 @@ const Response: React.FC<IResponseProps> = props => {
 			percent: '30'
 		}
 	];
-	// useEffect(() => {
-	// 	fetch(`/api/questions/${questionId_txt}`)
-	// 		.then(response => response.json())
-	// 		.then(res => {
-	// 			setQuestionTitle(res.text);
-	// 			setQuestionTypeCode(res.questionTypeCode);
-	// 		})
-	// 		.catch(err => console.log(err));
-	// }, [questionId_txt]);
-	// const fetchData = async () => {
-	// 	const data = await fetch('/api/surveys/daniel');
-	// 	const dataJSON = await data.json();
-	// 	console.log(dataJSON);
-	// };
-	// fetchData();
-	// const fetchData = async () => { await fetch('https://pokeapi.co/api/v2/pokemon/ditto/');
-
-	// fetchData().then(res => console.log(res));
-	// 4578706C-6F72-6951-3130-313500000000.json
-	// set1_txt / surveydataopt
-	// 93ba8e14-4b05-11e9-af77-0a3056fd536a
 
 	// useEffect(() => {
 	// 	// console.log('comp loaded', questionTypeCode);
@@ -112,6 +73,8 @@ const Response: React.FC<IResponseProps> = props => {
 	// 	// console.log('question: ', question);
 	// }, [questionTypeCode]);
 	// console.log(graph.graphType);
+
+	// function to fix number to two decimal places
 	function toFixed(x: number): string {
 		return x.toFixed(2);
 	}
@@ -127,7 +90,7 @@ const Response: React.FC<IResponseProps> = props => {
 			<Table className="mt-4" striped bordered hover>
 				<thead>
 					<tr>
-						<th>#</th>
+						<th className="w-1/2">#</th>
 						<th>Ct</th>
 						<th>%</th>
 					</tr>
