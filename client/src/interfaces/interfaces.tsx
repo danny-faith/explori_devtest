@@ -34,6 +34,16 @@ export interface IPageState {
 	pages: IPage[];
 }
 
+export interface IPageState {
+	responsesState: Array<IResponses>;
+}
+
+export interface IResponses {
+	responses: object[];
+	questionTitle: string;
+	questionTypeCode: string;
+}
+
 export interface ISurveyResponseProps {
 	match: {
 		params: {
