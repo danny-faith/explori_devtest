@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Dashboard() {
@@ -6,8 +6,8 @@ export default function Dashboard() {
 		<div>
 			<h1 className="text-center my-5">Welcome to Fruitful Surveys</h1>
 			<img
-				className="rounded-full mx-auto block"
-				src="http://theendearingdesigner.com/wp-content/uploads/2015/07/Creative-Fruits-Vegetables-Image-640x401.jpg"
+				className="rounded-full mx-auto mt-20 block w-1/2"
+				src="https://www.abelandcole.co.uk/media/6416_21603_z.jpg"
 			/>
 		</div>
 	);

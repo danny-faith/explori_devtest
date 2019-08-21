@@ -4,14 +4,9 @@ const PORT = process.env.PORT || 3000
 const mysql = require('mysql')
 const questionsRoute = require('./routes/questions.route');
 const surveysRoute = require('./routes/survey.route');
+const connection = require('./dbConnection');
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'explori_devtest2'
-});
-
+// Testing connection
 connection.connect(function(err) {
     (err) ? console.log(err) : console.log('....Connected to: ', connection.config.database);
 });

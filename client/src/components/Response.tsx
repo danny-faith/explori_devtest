@@ -19,7 +19,7 @@ const Response: React.FC<IResponseProps> = props => {
 	function fun() {
 		return 'hello';
 	}
-	console.log(props);
+	// console.log(props);
 
 	const options: Highcharts.Options = {
 		title: {
@@ -61,11 +61,16 @@ const Response: React.FC<IResponseProps> = props => {
 	// 	// console.log('question: ', question);
 	// }, [questionTypeCode]);
 	// console.log(graph.graphType);
-
+	const handleOnchange = (e: React.FormEvent<HTMLInputElement>): void => {
+		const { name, value }: any = e.target;
+		e.preventDefault();
+		console.log(e, name, value);
+		console.log('typed');
+	};
 	// function to fix number to two decimal places
-	function toFixed(x: number): string {
+	const toFixed = (x: number): string => {
 		return x.toFixed(2);
-	}
+	};
 	// calculate total number of responses for use with caluclating percentages
 	const totalResponses = props.responses
 		.map((response: any) => response['COUNT(id)'])
@@ -73,6 +78,7 @@ const Response: React.FC<IResponseProps> = props => {
 	return (
 		<div className="p-3 mt-3 bg-green-200">
 			<h5>{props.questionTitle}</h5>
+			<input onChange={handleOnchange} />
 			{/* <p>{graph.graphType}</p> */}
 			{/* <Example /> */}
 			<Table className="mt-4" striped bordered hover>

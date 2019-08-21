@@ -1,19 +1,16 @@
 const mysql = require('mysql')
+require('dotenv').config();
+
+const {
+    DBHOST,
+    DBUSER,
+    DBPASSWORD,
+    DB
+} = process.env;
 
 module.exports = connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'explori_devtest2'
+    host: DBHOST,
+    user: DBUSER,
+    password: DBPASSWORD,
+    database: DB
 });
-
-// module.exports = function() {
-//     connection.connect(function(err) {
-//         if (err) {
-//             console.error('error connecting: ' + err.stack);
-//             return;
-//         }
-    
-//         console.log('connected as id ' + connection.threadId);
-//     });
-// }
