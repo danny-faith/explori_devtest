@@ -13,15 +13,15 @@ const Page: React.FC<IPageProps> = props => {
 		[]
 	);
 
+	let newResponses: IResponses[] = [];
+	let fetches: any = [];
+
 	useEffect(() => {
 		Promise.all(fetches).then(() => {
 			updateResponses(newResponses);
-			// console.log(newResponses);
 		});
 	}, []);
 
-	let newResponses: IResponses[] = [];
-	let fetches: any = [];
 	questions.forEach((question: any, i: number) => {
 		fetches.push(
 			fetch(`/api/questions/answers/${question.questionId}`)

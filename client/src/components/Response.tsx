@@ -2,16 +2,12 @@ import React from 'react';
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Table } from 'react-bootstrap';
-import { IResponse } from '../interfaces/interfaces';
+import { toFixed } from '../utils';
 
 interface IResponseProps {
 	responses: object[];
 	questionTitle: string;
 	questionTypeCode: string;
-}
-
-interface IGraph {
-	graphType: string;
 }
 
 const Response: React.FC<IResponseProps> = props => {
@@ -37,30 +33,7 @@ const Response: React.FC<IResponseProps> = props => {
 			}
 		]
 	};
-	console.log(props);
 
-	// useEffect(() => {
-	// 	// console.log('comp loaded', questionTypeCode);
-	// 	if (questionTypeCode !== '') {
-	// 		switch (questionTypeCode) {
-	// 			case 'RD':
-	// 				setGraphType({ graphType: 'RD graph' });
-	// 				// graphType = 'RD graph';
-	// 				break;
-	// 			case 'TA':
-	// 				setGraphType({ graphType: 'TA graph' });
-	// 				break;
-	// 			default:
-	// 				break;
-	// 		}
-	// 	}
-	// 	// console.log('question: ', question);
-	// }, [questionTypeCode]);
-	// console.log(graph.graphType);
-	// function to fix number to two decimal places
-	const toFixed = (x: number): string => {
-		return x.toFixed(2);
-	};
 	// calculate total number of responses for use with caluclating percentages
 	const totalResponses = props.responses
 		.map((response: any) => response['COUNT(id)'])

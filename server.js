@@ -1,7 +1,7 @@
 const express = require('express')
-const app = express()
-const PORT = process.env.PORT || 3000
-const mysql = require('mysql')
+const app = express();
+const PORT = process.env.PORT || 3000;
+const mysql = require('mysql');
 const questionsRoute = require('./routes/questions.route');
 const surveysRoute = require('./routes/survey.route');
 const connection = require('./dbConnection');

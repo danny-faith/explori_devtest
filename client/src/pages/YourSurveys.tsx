@@ -12,9 +12,9 @@ interface ISurvey {
 
 const YourSurveys: React.FC = () => {
 	const [surveys, setSurveys] = useState<ISurvey[]>([]);
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(false); // not currently using loading
 	const [currentPage, setCurrentPage] = useState(1);
-	const [surveysPerPage, setSurveysPerPage] = useState(10);
+	const surveysPerPage = 10;
 
 	const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
