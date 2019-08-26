@@ -62,3 +62,9 @@ export interface ISurveyResponseProps {
 		};
 	};
 }
+
+export interface IPaginationProps {
+	surveysPerPage: number;
+	totalSurveys: number;
+	paginate: (number: number) => void;
+}
