@@ -17,17 +17,18 @@ const Page: React.FC<IPageProps> = props => {
 	let fetches: any = [];
 
 	useEffect(() => {
+		// Use Promise.all() to wait for all requests to complete before updating the DOM
 		Promise.all(fetches).then(() => {
 			updateResponses(newResponses);
 		});
 	}, []);
 
-	questions.forEach((question: any, i: number) => {
+	// For each question, store a fetch request for the responses/answers in the fetches array.
+	questions.forEach((question: any) => {
 		fetches.push(
 			fetch(`/api/questions/answers/${question.questionId}`)
 				.then(res => res.json())
 				.then(res => {
-					// console.log(res);
 					newResponses.push(res);
 				})
 				.catch(err => console.log(err))
@@ -36,15 +37,33 @@ const Page: React.FC<IPageProps> = props => {
 
 	return (
 		<React.Fragment>
-			<h3>{title}</h3>
-			{responsesState.map((response: any, i: number) => (
-				<Response
-					questionTitle={response.title}
-					questionTypeCode={response.questionTypeCode}
-					responses={response.results}
-					key={i}
-				/>
-			))}
+			<h3 className="mt-10">{title}</h3>
+			{responsesState.map((response: any, i: number) => {
+				if (
+					response.questionTypeCode === 'RD' ||
+					response.questionTypeCode === 'CH' ||
+					response.questionTypeCode === 'CO' ||
+					response.questionTypeCode === 'SB'
+				) {
+					return (
+						<Response
+							questionTitle={response.title}
+							questionTypeCode={response.questionTypeCode}
+							responses={response.results}
+							key={i}
+						/>
+					);
+				} else {
+					return (
+						<React.Fragment key={i}>
+							<h5>{response.title}</h5>
+							<p>
+								** Not currently showing due to incompatible response data **
+							</p>
+						</React.Fragment>
+					);
+				}
+			})}
 		</React.Fragment>
 	);
 };

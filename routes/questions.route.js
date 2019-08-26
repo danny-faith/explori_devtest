@@ -11,9 +11,12 @@ router.get('/answers/:questionId', (req, res) => {
     const question = require(`../questions/${req.params.questionId}.json`);
     let questionOptions = [];
 
+    // if (question.questionTypeCode === 'RD' || question.questionTypeCode === 'CH' || question.questionTypeCode === 'CO' || question.questionTypeCode === 'SB') {
+    //     return res.json({'msg': 'No compatible answers for this question'});
+    // }
     // only certain questionTypeCodes currently allowed
     // In a complete system the returned data structure would likely be based on the questionTypeCode
-    if(question.questionTypeCode === 'RD' || question.questionTypeCode === 'CH' || question.questionTypeCode === 'CO' || question.questionTypeCode === 'SB') {
+    if (question.questionTypeCode === 'RD' || question.questionTypeCode === 'CH' || question.questionTypeCode === 'CO' || question.questionTypeCode === 'SB') {
         questionOptions = question.optionSet.options.map(option => {
             return {
                 set1_txt: option.id.toUpperCase(), // .toUpperCase() to match set1_txt from database
