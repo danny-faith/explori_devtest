@@ -12,15 +12,14 @@ interface IResponseProps {
 
 interface IGraph {
 	graphType: string;
-	fun?(text: string): string;
 }
 
 const Response: React.FC<IResponseProps> = props => {
-	function fun() {
-		return 'hello';
-	}
-	// console.log(props);
-
+	const data = props.responses.map((response: any, i: number) => ({
+		name: response.optionSetTxt,
+		x: i,
+		y: response['COUNT(id)']
+	}));
 	const options: Highcharts.Options = {
 		title: {
 			text: props.questionTitle
@@ -34,14 +33,11 @@ const Response: React.FC<IResponseProps> = props => {
 		series: [
 			{
 				type: 'bar',
-				data: [105, 0]
-			},
-			{
-				type: 'bar',
-				data: [0, 6]
+				data
 			}
 		]
 	};
+	console.log(props);
 
 	// useEffect(() => {
 	// 	// console.log('comp loaded', questionTypeCode);
@@ -61,12 +57,6 @@ const Response: React.FC<IResponseProps> = props => {
 	// 	// console.log('question: ', question);
 	// }, [questionTypeCode]);
 	// console.log(graph.graphType);
-	const handleOnchange = (e: React.FormEvent<HTMLInputElement>): void => {
-		const { name, value }: any = e.target;
-		e.preventDefault();
-		console.log(e, name, value);
-		console.log('typed');
-	};
 	// function to fix number to two decimal places
 	const toFixed = (x: number): string => {
 		return x.toFixed(2);
@@ -78,9 +68,6 @@ const Response: React.FC<IResponseProps> = props => {
 	return (
 		<div className="p-3 mt-3 bg-green-200">
 			<h5>{props.questionTitle}</h5>
-			<input onChange={handleOnchange} />
-			{/* <p>{graph.graphType}</p> */}
-			{/* <Example /> */}
 			<Table className="mt-4" striped bordered hover>
 				<thead>
 					<tr>
