@@ -1,17 +1,60 @@
+#Fruitful Surveys - Daniel Blythe
+
+I have used TypeScript with React, this has been quite a learning curve but a lot of fun.
+
+While my TypeScript is compiling fine, there are too many uses of the `any` type and I woul like to clean this up so everything is strong typed and ntohing is implicit.
+
+## Notes
+
+- Please use master branch
+- This project assumes you have a copy of the supplied dev_test database installed with MySQL running
+- This project assumes you have Node
+- \*Please add a .env file to the root directory of the project and fill in the following with the relevant database credentials
+  DBHOST=""
+  DBUSER=""
+  DBPASSWORD=""
+  DB=""
+- concurrently package is being used in this project to run server and client in dev mode at same time.
+- React was buult with create-react-app using the TypeScript9(TS) flag to install a TS version
+- @types/\* should all be moved into DevDependencies in client package.json
+
+## Stack
+
+- MySQL
+- Express
+- React (TypeScript)
+- Node
+
+### How to install project
+
+$ git clone https://github.com/danny-faith/explori_devtest.git <PROJECT_NAME>
+$ cd <PROJECT_NAME>
+$ npm i
+$ cd client
+\$ npm i
+
+### How to run project
+
+- Please see notes on .env for database connection
+
+$ cd <PROJECT_NAME> 
+$ npm run dev
+
 # Explori Developer Candidate Test
 
 Congratulations on getting to the Developer test. That you are receiving this means that we are considering you as a serious contender! :smiley:
 
-## You have been provided with: 
+## You have been provided with:
+
 1. Documentation (found in docs folder):
 
-    a. A database schema diagram
+   a. A database schema diagram
 
-	  b. Question type information
+   b. Question type information
 
-	  c. Wireframes
+   c. Wireframes
 
-    d. Additional information
+   d. Additional information
 
 ## Prerequisites:
 
@@ -41,9 +84,9 @@ Using the supplied data please provide:
 
 2. a simple frontend client app (could be implemented as a simple ReactJs app) that displays 2 views:
 
-    i. A list of the surveys in the database that displays the survey’s title with a link to the report page view. The list could be paginated - feel free to use a list widget / library
+   i. A list of the surveys in the database that displays the survey’s title with a link to the report page view. The list could be paginated - feel free to use a list widget / library
 
-    ii. A report page that displays the result of at least one question (or question type) in the survey in a table (but feel free to supply more if you can). If the question has question sets and question options, display each question option’s raw count and the percentage count (see Wireframe example). If you get time you could add a chart to each question too using your library of choice (perhaps using Highcharts.js or D3). For any question types that you don’t have time to implement, just display the question title and short text (content.shortTitle content.longTitle). Feel free to add any design elements that make it look good and provides a decent user experience. Add in any necessary routes / links so that it is navigable from the home page.
+   ii. A report page that displays the result of at least one question (or question type) in the survey in a table (but feel free to supply more if you can). If the question has question sets and question options, display each question option’s raw count and the percentage count (see Wireframe example). If you get time you could add a chart to each question too using your library of choice (perhaps using Highcharts.js or D3). For any question types that you don’t have time to implement, just display the question title and short text (content.shortTitle content.longTitle). Feel free to add any design elements that make it look good and provides a decent user experience. Add in any necessary routes / links so that it is navigable from the home page.
 
 This task will involve setting up some basic API calls to the server app that queries the database and returns the data in a format that allows the frontend to consume and display the data as required. You will find in the documentation some sample database info / schemas that will guide you.
 

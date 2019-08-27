@@ -34,6 +34,22 @@ export interface IPageState {
 	pages: IPage[];
 }
 
+export interface IPageState {
+	responsesState: Array<IResponses>;
+}
+
+export interface IResponses {
+	responses: Array<IResponse>;
+	questionTitle: string;
+	questionTypeCode: string;
+}
+
+export interface IResponse {
+	'COUNT(id)': number;
+	optionSetTxt: string;
+	set1_txt: string;
+}
+
 export interface ISurveyResponseProps {
 	match: {
 		params: {
@@ -45,4 +61,10 @@ export interface ISurveyResponseProps {
 			title: string;
 		};
 	};
+}
+
+export interface IPaginationProps {
+	surveysPerPage: number;
+	totalSurveys: number;
+	paginate: (number: number) => void;
 }

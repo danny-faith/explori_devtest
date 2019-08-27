@@ -1,21 +1,11 @@
 import React, { useEffect } from 'react';
 import Response from '../components/Response';
-import { IPageProps } from '../interfaces/interfaces';
+import { IPageState, IPageProps, IResponses } from '../interfaces/interfaces';
 
 const defaultProps: IPageProps = {
 	title: '',
 	questions: []
 };
-
-interface IResponses {
-	responses: object[];
-	questionTitle: string;
-	questionTypeCode: string;
-}
-
-interface IPageState {
-	responsesState: Array<IResponses>;
-}
 
 const Page: React.FC<IPageProps> = props => {
 	const { title, questions } = props;
@@ -23,83 +13,57 @@ const Page: React.FC<IPageProps> = props => {
 		[]
 	);
 
+	let newResponses: IResponses[] = [];
+	let fetches: any = [];
+
 	useEffect(() => {
-		// console.log('useEffect');
-		// responsesState.length === 0 && fetchData();
-		// if (responsesState.length === 0) {
-		// 	// fetchData().then(res => {
-		// 	// 	console.log(res);
-		// 	// });
-		// }
+		// Use Promise.all() to wait for all requests to complete before updating the DOM
 		Promise.all(fetches).then(() => {
 			updateResponses(newResponses);
-			console.log(newResponses);
 		});
 	}, []);
 
-	let newResponses: IResponses[] = [];
-	let fetches: any = [];
-	questions.forEach((question: any, i: number) => {
-		// const newResponsesObj: IResponses = {
-		// 	responses: [],
-		// 	questionTitle: '',
-		// 	questionTypeCode: ''
-		// };
-		// async function getResponses(questionId: string) {
-		// 	let res = await fetch(`/api/questions/answers/${questionId}`);
-		// 	let data = await res.json();
-		// 	return data;
-		// }
-		// getResponses(question.questionId).then(data => {
-		// 	// console.log(data);
-		// 	newResponsesObj.responses = data;
-		// });
-		// async function getTitleAndTypeCode(questionId: string) {
-		// 	let res = await fetch(`/api/questions/${questionId}`);
-		// 	let data = await res.json();
-		// 	return data;
-		// }
-		// getTitleAndTypeCode(question.questionId).then(data => {
-		// 	// console.log(data);
-		// 	newResponsesObj.questionTitle = data.title;
-		// 	newResponsesObj.questionTypeCode = data.questionTypeCode;
-		// });
+	// For each question, store a fetch request for the responses/answers in the fetches array.
+	questions.forEach((question: any) => {
 		fetches.push(
 			fetch(`/api/questions/answers/${question.questionId}`)
 				.then(res => res.json())
 				.then(res => {
-					// newResponses = [...responsesState, newResponsesObj];
 					newResponses.push(res);
-					// console.log('res: ', res);
 				})
 				.catch(err => console.log(err))
 		);
-
-		// fetch(`/api/questions/${question.questionId}`)
-		// 	.then(res => res.json())
-		// 	.then(res => {
-		// 		newResponsesObj.questionTitle = res.title;
-		// 		newResponsesObj.questionTypeCode = res.questionTypeCode;
-		// 	})
-		// 	.catch(err => console.log(err));
 	});
-
-	// useEffect(() => {
-
-	// }, []);
-	// setTimeout(() => console.log(newResponses), 3000);
 
 	return (
 		<React.Fragment>
-			<h3>{title}</h3>
-			{responsesState.map((response: any, i: number) => (
-				<Response
-					questionTitle={response.title}
-					questionTypeCode={response.questionTypeCode}
-					responses={response.responses}
-					key={i}
-				/>
-			))}
+			<h3 className="mt-10">{title}</h3>
+			{responsesState.map((response: any, i: number) => {
+				if (
+					response.questionTypeCode === 'RD' ||
+					response.questionTypeCode === 'CH' ||
+					response.questionTypeCode === 'CO' ||
+					response.questionTypeCode === 'SB'
+				) {
+					return (
+						<Response
+							questionTitle={response.title}
+							questionTypeCode={response.questionTypeCode}
+							responses={response.results}
+							key={i}
+						/>
+					);
+				} else {
+					return (
+						<React.Fragment key={i}>
+							<h5>{response.title}</h5>
+							<p>
+								** Not currently showing due to incompatible response data **
+							</p>
+						</React.Fragment>
+					);
+				}
+			})}
 		</React.Fragment>
 	);
 };
