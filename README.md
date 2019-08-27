@@ -1,8 +1,8 @@
 #Fruitful Surveys - Daniel Blythe
 
-I have used TypeScript with React, this has been quite a learning curve but a lot of fun.
+I have used TypeScript with React, this has been quite a learning curve but a lot of fun!
 
-While my TypeScript is compiling fine, there are too many uses of the `any` type and I woul like to clean this up so everything is strong typed and ntohing is implicit.
+While my TypeScript is compiling fine, there are too many uses of the `any` type and I would like to clean this up so everything is strong typed and nothing is implicit.
 
 ## Notes
 
