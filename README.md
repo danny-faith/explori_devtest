@@ -6,10 +6,10 @@
 - This project assumes you have a copy of the supplied dev_test database installed with MySQL running
 - This project assumes you have Node
 - \*Please add a .env file to the root directory of the project and fill in the following with the relevant database credentials
-  DBHOST=""
-  DBUSER=""
-  DBPASSWORD=""
-  DB=""
+  DBHOST=""<br />
+  DBUSER=""<br />
+  DBPASSWORD=""<br />
+  DB=""<br />
 - concurrently package is being used in this project to run server and client in dev mode at same time.
 - React was buult with create-react-app using the TypeScript(TS) flag to install a TS version
 - @types/\* should all be moved into DevDependencies in client package.json
@@ -48,17 +48,17 @@
 
 ### How to install project
 
-$ git clone https://github.com/danny-faith/explori_devtest.git <PROJECT_NAME>
-$ cd <PROJECT_NAME>
-$ npm i
-$ cd client
-\$ npm i
+$ git clone https://github.com/danny-faith/explori_devtest.git <PROJECT_NAME><br />
+$ cd <PROJECT_NAME><br />
+$ npm i<br />
+$ cd client<br />
+\$ npm i<br />
 
 ### How to run project
 
 - Please see notes on .env for database connection
 
-$ cd <PROJECT_NAME> 
+$ cd <PROJECT_NAME> <br />
 $ npm run dev
 
 # Explori Developer Candidate Test
