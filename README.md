@@ -1,11 +1,11 @@
-#Fruitful Surveys - Daniel Blythe
+# Fruitful Surveys - Daniel Blythe
 
 ## Notes
 
 - Please use master branch
 - This project assumes you have a copy of the supplied dev_test database installed with MySQL running
 - This project assumes you have Node
-- \*Please add a .env file to the root directory of the project and fill in the following with the relevant database credentials
+- \*Please add a .env file to the root directory of the project and fill in the following with the relevant database credentials<br />
   DBHOST=""<br />
   DBUSER=""<br />
   DBPASSWORD=""<br />
@@ -59,7 +59,7 @@ $ cd client<br />
 - Please see notes on .env for database connection
 
 $ cd <PROJECT_NAME> <br />
-$ npm run dev
+$ npm run dev<br />
 
 # Explori Developer Candidate Test
 
