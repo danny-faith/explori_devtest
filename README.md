@@ -39,7 +39,6 @@
 - react
 - react-bootstrap
 - react-dom
-- react-paginate
 - react-router-dom
 - react-scripts
 - typescript
