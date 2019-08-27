@@ -1,9 +1,5 @@
 #Fruitful Surveys - Daniel Blythe
 
-I have used TypeScript with React, this has been quite a learning curve but a lot of fun.
-
-While my TypeScript is compiling fine, there are too many uses of the `any` type and I woul like to clean this up so everything is strong typed and ntohing is implicit.
-
 ## Notes
 
 - Please use master branch
@@ -15,7 +11,7 @@ While my TypeScript is compiling fine, there are too many uses of the `any` type
   DBPASSWORD=""
   DB=""
 - concurrently package is being used in this project to run server and client in dev mode at same time.
-- React was buult with create-react-app using the TypeScript9(TS) flag to install a TS version
+- React was buult with create-react-app using the TypeScript(TS) flag to install a TS version
 - @types/\* should all be moved into DevDependencies in client package.json
 
 ## Stack
@@ -24,6 +20,31 @@ While my TypeScript is compiling fine, there are too many uses of the `any` type
 - Express
 - React (TypeScript)
 - Node
+
+## Packages
+
+### Backend
+
+- dotenv
+- express
+- load-json-file
+- mysql
+- nodemon
+
+### Frontend
+
+- bootstrap
+- highcharts
+- highcharts-react-official
+- react
+- react-bootstrap
+- react-dom
+- react-router-dom
+- react-scripts
+- typescript
+- autoprefixer
+- postcss-cli
+- tailwindcss
 
 ### How to install project
 
